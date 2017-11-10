@@ -31,8 +31,47 @@ class SignUpViewController : UIViewController
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height:  self.view.frame.height + 100)
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+     //   handleViewRotaion(orientation: toInterfaceOrientation)
+    }
+    
+    //MARK: - Rotation controls
+    
+    func handleViewRotaion(orientation:UIInterfaceOrientation) -> Void {
+        switch orientation {
+        case .portrait :
+            print("portrait view")
+             scrollView.contentSize = CGSize(width: 0 , height:  UIScreen.main.bounds.size.width)
+            break
+        case .portraitUpsideDown :
+            
+             scrollView.contentSize = CGSize(width: 0, height: UIScreen.main.bounds.size.width)
+            print("portraitUpsideDown view")
+            break
+        case .landscapeLeft :
+            print("landscapeLeft view")
+             scrollView.contentSize = CGSize(width: 0, height:  UIScreen.main.bounds.size.height + 250)
+            break
+        case .landscapeRight :
+            print("landscapeRight view")
+             scrollView.contentSize = CGSize(width: 0, height:  UIScreen.main.bounds.size.height + 250)
+            break
+        case .unknown :
+            break
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        scrollView.contentSize = CGSize(width:UIScreen.main.bounds.size.width , height: self.scrollView.contentSize.height)
+//        if UIDevice.current.orientation.isLandscape {
+//            print("landscape")
+//            scrollView.contentSize = CGSize(width: 0, height:  UIScreen.main.bounds.size.width + 250)
+//
+//        } else {
+//            print("portrait")
+//            scrollView.contentSize = CGSize(width:0, height:  UIScreen.main.bounds.size.height + 100)
+//
+//        }
     }
     @IBAction func signInButtonAction(sender : UIButton)
     {
