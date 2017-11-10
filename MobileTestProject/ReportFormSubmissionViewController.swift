@@ -33,7 +33,8 @@ class ReportFormSubmissionViewController: UIViewController {
     @IBOutlet var cleanedButton : UIButton!
     @IBOutlet var notSatisfactoryButton : UIButton!
     @IBOutlet var notCleanedButton : UIButton!
-    
+    @IBOutlet var scrollView : UIScrollView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,9 @@ class ReportFormSubmissionViewController: UIViewController {
         self.hideShowkeyboadMethods()
         self.setupChooseDropDown()
 
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        scrollView.contentSize = CGSize(width:UIScreen.main.bounds.size.width , height: self.scrollView.contentSize.height)
     }
     
   

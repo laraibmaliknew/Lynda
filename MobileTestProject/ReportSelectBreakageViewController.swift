@@ -15,7 +15,8 @@ class ReportSelectBreakageViewController: UIViewController {
     var categoriesArray : [CategoryObject] = []
     var selectedCategoryObject : CategoryObject!
     var items : [String] = [];
-    
+    @IBOutlet var scrollView : UIScrollView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingIndicator.isHidden = true
@@ -33,7 +34,10 @@ class ReportSelectBreakageViewController: UIViewController {
         
     
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        scrollView.contentSize = CGSize(width:UIScreen.main.bounds.size.width , height: self.scrollView.contentSize.height)
+    }
+    
     
     func getReportingForm()
     {

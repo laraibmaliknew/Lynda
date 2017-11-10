@@ -17,6 +17,7 @@ class ReportFormViewController: UIViewController {
     
     var selectedCategoryObject : CategoryObject!
     var selectedRoomCategoryObject : CategoryObject!
+    @IBOutlet var scrollView : UIScrollView!
 
     var items : [String] = [];
 
@@ -38,6 +39,10 @@ class ReportFormViewController: UIViewController {
         
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        scrollView.contentSize = CGSize(width:UIScreen.main.bounds.size.width , height: self.scrollView.contentSize.height)
+    }
+    
     func getReportingForm()
     {
         loadingIndicator.startAnimating()
