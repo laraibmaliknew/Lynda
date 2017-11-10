@@ -14,6 +14,7 @@ class SingInViewController : UIViewController
     @IBOutlet var paswordNameTextField : UITextField!
     @IBOutlet var loadingIndicator : UIActivityIndicatorView!
     var shouldStaySignIn = false
+    @IBOutlet var scrollView : UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,9 @@ class SingInViewController : UIViewController
         self.hideShowkeyboadMethods()
         
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        scrollView.contentSize = CGSize(width:UIScreen.main.bounds.size.width , height: self.scrollView.contentSize.height)
+    }
     
     @IBAction func signInButtonAction(sender : UIButton)
     {
