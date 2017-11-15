@@ -458,8 +458,7 @@
 				TargetAttributes = {
 					39FBB0101E6FCFF7009AE7ED = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4R2Y98P579;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					39FBB0241E6FCFF8009AE7ED = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -778,8 +777,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4R2Y98P579;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MobileTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arkhitech.Touchreading;
@@ -797,8 +796,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4R2Y98P579;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MobileTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arkhitech.Touchreading;
