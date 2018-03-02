@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390724272049C0ED002A8743 /* StartCleaningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390724262049C0ED002A8743 /* StartCleaningViewController.swift */; };
 		3935C61C1F9272E00057438D /* ReportFormSubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935C61B1F9272E00057438D /* ReportFormSubmissionViewController.swift */; };
 		3935C61F1F9275B40057438D /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3935C61D1F9275B40057438D /* selected.png */; };
 		3935C6201F9275B40057438D /* unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3935C61E1F9275B40057438D /* unselected.png */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		390724262049C0ED002A8743 /* StartCleaningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCleaningViewController.swift; sourceTree = "<group>"; };
 		3935C61B1F9272E00057438D /* ReportFormSubmissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportFormSubmissionViewController.swift; sourceTree = "<group>"; };
 		3935C61D1F9275B40057438D /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
 		3935C61E1F9275B40057438D /* unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unselected.png; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				3935C61B1F9272E00057438D /* ReportFormSubmissionViewController.swift */,
 				39483AED1F9352A800301C6A /* ReportSelectBreakageViewController.swift */,
 				395B6F2E1F96577000B5F513 /* ThankyouViewController.swift */,
+				390724262049C0ED002A8743 /* StartCleaningViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				TargetAttributes = {
 					39FBB0101E6FCFF7009AE7ED = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 6J372757GL;
 						ProvisioningStyle = Manual;
 					};
 					39FBB0241E6FCFF8009AE7ED = {
@@ -611,6 +615,7 @@
 				3935C61C1F9272E00057438D /* ReportFormSubmissionViewController.swift in Sources */,
 				395B6F2F1F96577000B5F513 /* ThankyouViewController.swift in Sources */,
 				39FBB0561E6FF710009AE7ED /* BusinessLayer.swift in Sources */,
+				390724272049C0ED002A8743 /* StartCleaningViewController.swift in Sources */,
 				3955E79D1F924AF20011F64D /* CustomPresentAnimationController.swift in Sources */,
 				3955E79E1F924AF20011F64D /* DefaultTableView.swift in Sources */,
 				395B6F441F966B9600B5F513 /* DropDownCell.swift in Sources */,
@@ -776,15 +781,15 @@
 			baseConfigurationReference = E3743B76659EDCEE3B65BBA4 /* Pods-MobileTestProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6J372757GL;
 				INFOPLIST_FILE = MobileTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arkhitech.Touchreading;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lydia.mountains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "75e94c6e-f6c9-48d8-9917-516ce8ebc4a4";
+				PROVISIONING_PROFILE_SPECIFIER = dist;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -795,15 +800,15 @@
 			baseConfigurationReference = 8758DD7603C20A38C8B7CB7E /* Pods-MobileTestProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6J372757GL;
 				INFOPLIST_FILE = MobileTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arkhitech.Touchreading;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lydia.mountains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "75e94c6e-f6c9-48d8-9917-516ce8ebc4a4";
+				PROVISIONING_PROFILE_SPECIFIER = dist;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};

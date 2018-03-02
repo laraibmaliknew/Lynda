@@ -19,6 +19,7 @@ class ReportSelectBreakageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         loadingIndicator.isHidden = true
         self.setupChooseDropDown()
         self.getReportingForm()

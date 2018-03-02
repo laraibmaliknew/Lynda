@@ -212,7 +212,7 @@ class BusinessLayer
     
     
     
-    func submittedForm(tags: String,user_id:String,staff : String, suboption:String,cleaned :String , ad_notes:String, responseBlock : @escaping APIRequestResponseBlock) {
+    func submittedForm(rec_id:String,staff : String , cleaned :String , ad_notes:String, responseBlock : @escaping APIRequestResponseBlock) {
         
         
         
@@ -220,13 +220,23 @@ class BusinessLayer
         let manager:AFHTTPSessionManager = AFHTTPSessionManager()
         manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html") as? Set<String>
         
-        let paramsDict = ["tags":tags ,
-                          "user_id":user_id ,
+//        let paramsDict = ["tags":tags ,
+//                          "user_id":user_id ,
+//                          "staff":staff ,
+//                          "suboption":suboption ,
+//                          "cleaned":cleaned ,
+//                          "ad_notes":ad_notes ,
+//                          ]
+   
+        let paramsDict = [
+                          "rec_id":rec_id ,
                           "staff":staff ,
-                          "suboption":suboption ,
                           "cleaned":cleaned ,
                           "ad_notes":ad_notes ,
                           ]
+        
+        
+        
         
         
         manager.post(Constants.submitUrl, parameters: paramsDict, progress: nil, success: { (URLSessionDataTask, responseObject) in
@@ -242,7 +252,37 @@ class BusinessLayer
         })
         
     }
+
     
+    
+    
+    func submittedTimeStamp(tags: String,user_id:String, suboption:String, responseBlock : @escaping APIRequestResponseBlock) {
+        
+        
+        
+        
+        let manager:AFHTTPSessionManager = AFHTTPSessionManager()
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html") as? Set<String>
+        
+        let paramsDict = ["tags":tags ,
+                          "user_id":user_id ,
+                          "suboption":suboption ,
+                          
+                          ]
+        
+        
+        manager.post(Constants.submitNewUrl, parameters: paramsDict, progress: nil, success: { (URLSessionDataTask, responseObject) in
+            
+            
+            print(responseObject)
+            responseBlock((responseObject as! NSDictionary).value(forKey: "msg"),true,nil)
+            
+        }, failure: { (URLSessionDataTask, responseObject) in
+            responseBlock(responseObject,false,responseObject)
+            
+        })
+        
+    }
     
 
 

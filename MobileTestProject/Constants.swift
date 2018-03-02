@@ -14,6 +14,7 @@ class Constants {
     static let tagsUrl =  "http://todonerd.com/app_admin/tags.php"//
     static let optionsUrl =  "http://todonerd.com/app_admin/option.php"//
     static let submitUrl =  "http://todonerd.com/app_admin/submit.php"//
+    static let submitNewUrl  = "http://todonerd.com/app_admin/n_submit.php"
     static let keepUserLoggedIn = "keepUserLoggedIn"
     
     static func styleUpTextField (textFied : UITextField , message : String)

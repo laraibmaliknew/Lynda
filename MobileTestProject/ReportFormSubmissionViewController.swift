@@ -21,9 +21,9 @@ class ReportFormSubmissionViewController: UIViewController {
     let dropDown = DropDown()
 
     @IBOutlet var optionButton : UIButton!
-    var prevCategoryObject : CategoryObject!
+    var prevCategoryObject : CategoryObject = CategoryObject()
     var staffsArray : [CategoryObject] = []
-    var selectedRoomCategoryObject : CategoryObject!
+    var selectedRoomCategoryObject : CategoryObject = CategoryObject()
 
     var categoriesArray : [CategoryObject] = []
     var selectedCategoryObject : CategoryObject!
@@ -33,6 +33,8 @@ class ReportFormSubmissionViewController: UIViewController {
     @IBOutlet var cleanedButton : UIButton!
     @IBOutlet var notSatisfactoryButton : UIButton!
     @IBOutlet var notCleanedButton : UIButton!
+    @IBOutlet var needsMaintainanceButton : UIButton!
+
     @IBOutlet var scrollView : UIScrollView!
 
     
@@ -113,6 +115,7 @@ class ReportFormSubmissionViewController: UIViewController {
         cleanedButton.isSelected = false
         notSatisfactoryButton.isSelected = false
         notCleanedButton.isSelected = false
+        needsMaintainanceButton.isSelected = false
     }
     
     @IBAction func  cleanedButton(sender : UIButton)
@@ -138,6 +141,16 @@ class ReportFormSubmissionViewController: UIViewController {
 
     }
     
+    
+    
+    @IBAction func  needMaintainceButtonAction(sender : UIButton)
+    {
+        self.disSelectedAllButtons()
+        needsMaintainanceButton.isSelected = true
+        cleanValue = "Needs maintenance"
+        
+    }
+    
     @IBAction func  submitButton(sender : UIButton)
         
     {
@@ -149,7 +162,13 @@ class ReportFormSubmissionViewController: UIViewController {
     
         self.loadingIndicator.startAnimating()
         self.loadingIndicator.isHidden = false
-        BusinessLayer.sharedInstance.submittedForm(tags: self.selectedRoomCategoryObject.name, user_id: UserDefaults.standard.object(forKey: "user_name") as! String, staff: self.staffName, suboption: self.prevCategoryObject.name, cleaned: cleanValue, ad_notes: textView.text)  { (result, status, error) in
+        
+        self.selectedRoomCategoryObject.name =    UserDefaults.standard.value(forKey: "selectedRoomCategoryObject") as! String
+         self.prevCategoryObject.name =    UserDefaults.standard.value(forKey: "prevCategoryObject")  as! String
+        let msg_id = UserDefaults.standard.value(forKey: "msg_id") as! Int
+        
+     
+        BusinessLayer.sharedInstance.submittedForm(rec_id: "\(msg_id)", staff: self.staffName, cleaned: cleanValue, ad_notes: textView.text, responseBlock:   { (result, status, error) in
             
             if(error == nil)
             {
@@ -157,11 +176,12 @@ class ReportFormSubmissionViewController: UIViewController {
 //                let alert = UIAlertController(title: "Success", message: "Info has been submitted!", preferredStyle: UIAlertControllerStyle.alert)
 //                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: self.goToNextView))
 //                self.present(alert, animated: true, completion: nil)
+                UserDefaults.standard.setValue(nil, forKey: "msg_id")
                 self.performSegue(withIdentifier: "SubmissionToThankyouVC", sender: self)
             }
             self.loadingIndicator.stopAnimating()
             self.loadingIndicator.isHidden = true
-        }
+        })
         
     }
     

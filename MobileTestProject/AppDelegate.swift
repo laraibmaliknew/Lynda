@@ -45,6 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil) // this assumes your storyboard is titled "Main.storyboard"
+        var status = false
+        if let value = UserDefaults.standard.value(forKey: "msg_id")
+        {
+            if (value is Int)
+            {
+                status = true
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "StartCleaningViewController") as! StartCleaningViewController
+                self.window?.rootViewController = controller     //  the move to the start cleaning vc
+            }
+            
+        }
+      if(!status)
+      {
         if(UserDefaults.standard.bool(forKey:  "keepUserLoggedIn"))
         {
         //go to reporting view
@@ -54,6 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else{
         let signUpVc = mainStoryboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController // inside "YOUR_VC_IDENTIFIER" substitute the Storyboard ID you created in step 2 for the view controller you want to open here. And substitute YourViewController with the name of your view controller, like, for example, ViewController2.
         self.window?.rootViewController = signUpVc
+        }
         }
         self.window?.makeKeyAndVisible()
         return true

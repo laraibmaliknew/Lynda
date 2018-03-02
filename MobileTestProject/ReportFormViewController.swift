@@ -95,10 +95,32 @@ class ReportFormViewController: UIViewController {
             self.showAlertMessage(error: "Please select option to conitnue")
             return
         }
-            self.performSegue(withIdentifier: "SelectReportToReportFormSubmissionVC", sender: self)
+        
+        self.submitTimeStampAPICall()
     }
 
     
+    func submitTimeStampAPICall()
+    {
+        loadingIndicator.startAnimating()
+        self.loadingIndicator.isHidden = false
+        BusinessLayer.sharedInstance.submittedTimeStamp(tags: self.selectedRoomCategoryObject.name, user_id: UserDefaults.standard.object(forKey: "user_name") as! String, suboption: self.selectedCategoryObject.name) { (object, status, error) in
+            
+            self.loadingIndicator.stopAnimating()
+            self.loadingIndicator.isHidden = true
+            if(error == nil)
+            {
+            UserDefaults.standard.set(self.selectedRoomCategoryObject.name, forKey: "selectedRoomCategoryObject")
+                UserDefaults.standard.set(self.selectedCategoryObject.name, forKey: "prevCategoryObject")
+
+            UserDefaults.standard.set(object as! Int, forKey: "msg_id")
+            UserDefaults.standard.synchronize()
+            self.performSegue(withIdentifier: "ReportToStartCleaningView", sender: self)
+            }
+            
+        }
+       
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
