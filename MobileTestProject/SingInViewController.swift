@@ -33,14 +33,14 @@ class SingInViewController : UIViewController
     {
         
         
-        if((paswordNameTextField.text?.characters.count)! <= 0)
+        if((paswordNameTextField.text?.count)! <= 0)
         {
             self.showAlertMessage(error: "Password cananot be empty")
             return
         }
         
         
-        if((userNameTextField.text?.characters.count)! <= 0)
+        if((userNameTextField.text?.count)! <= 0)
         {
             self.showAlertMessage(error: "User Name cananot be empty")
             return

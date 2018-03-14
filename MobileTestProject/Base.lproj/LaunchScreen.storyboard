@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,8 +29,8 @@
                         <constraints>
                             <constraint firstItem="UmV-ks-KvX" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="JcW-pa-V7n"/>
                             <constraint firstItem="UmV-ks-KvX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="R9p-Od-wyP"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="UmV-ks-KvX" secondAttribute="bottom" id="TFf-Q5-jAp"/>
                             <constraint firstAttribute="trailing" secondItem="UmV-ks-KvX" secondAttribute="trailing" id="o2t-Ac-ah3"/>
+                            <constraint firstAttribute="bottom" secondItem="UmV-ks-KvX" secondAttribute="bottom" id="rd0-lL-wjw"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -19,7 +19,7 @@ class StartCleaningViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       let str =  UserDefaults.standard.value(forKey: "selectedRoomCategoryObject") as! String
+       let str =  UserDefaults.standard.value(forKey: "prevCategoryObject") as! String
         label.text = "Once you have finished cleaning the \(str), please click next to continue your report."
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -44,7 +44,7 @@ class StartCleaningViewController : UIViewController {
         {
             
             
-            let vc:ReportFormSubmissionViewController = segue.destination as! ReportFormSubmissionViewController
+            let _:ReportFormSubmissionViewController = segue.destination as! ReportFormSubmissionViewController
 //            vc.selectedRoomCategoryObject = self.selectedRoomCategoryObject
 //            vc.prevCategoryObject = self.selectedCategoryObject
         }
